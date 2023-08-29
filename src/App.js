@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import { Button, Container, ThemeProvider, Stack } from '@mui/material';
+import theme from './styles/themes/index';
+import Appbar from './components/appbar/AppBar';
+import Banner from './components/banner';
+import Blog from './components/blog';
+import { Route, Router, Routes, BrowserRouter } from 'react-router-dom';
+import AppBar from './components/appbar/AppBar';
+import Projects from './components/projects';
+import About from './components/about';
 
 function App() {
+
+  useEffect(() => {
+    document.title = 'Urban Science MEP'
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    //   <ThemeProvider theme={theme}>
+    //   <Container
+    //     disableGutters
+    //     maxWidth="xl"
+    //     sx={{
+    //       background: "#fff",
+    //     }}
+    //   >
+    //     <Stack>
+    //       {/* <UIProvider> */}
+    //         <Appbar/>
+    //         <Banner />
+    //       {/* </UIProvider> */}
+    //     </Stack>
+    //   </Container>
+    // </ThemeProvider>
+    <BrowserRouter >
+      <ThemeProvider theme={theme}>
+        <Container
+          disableGutters
+          maxWidth="xl"
+          sx={{
+            background: "#fff",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <AppBar />
+          <Stack>
+            <Routes>
+              <Route  path='/' element={<Banner />} />
+              <Route  path="/blog" element={<Blog />} />
+              <Route  path='/projects' element={<Projects />} />
+              <Route  path='/about' element={<About />} />
+            </Routes>
+          </Stack>
+        </Container>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
