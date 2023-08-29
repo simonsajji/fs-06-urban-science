@@ -32,7 +32,7 @@ export default function About() {
   const theme = useTheme();
 return (
   <AboutContainer sx={{ py: { xs: 3, lg: 2 } }}>
-    <AboutImage src="/images/about.jpg" ></AboutImage>
+    <AboutImage src="images/about.jpg" ></AboutImage>
     <Box
       sx={{
         mx: "auto",

@@ -15,7 +15,7 @@ export default function Banner() {
 
   return (
     <BannerContainer >
-      <BannerImage src="/images/banner.jpg" />
+      <BannerImage src="images/banner.jpg" />
       <BannerContent>
         <BannerTitle variant="h2">
         Leading MEP & Facility management company in Dubai

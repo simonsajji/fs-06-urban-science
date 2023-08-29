@@ -16,23 +16,7 @@ function App() {
     document.title = 'Urban Science MEP'
   }, [])
   return (
-    //   <ThemeProvider theme={theme}>
-    //   <Container
-    //     disableGutters
-    //     maxWidth="xl"
-    //     sx={{
-    //       background: "#fff",
-    //     }}
-    //   >
-    //     <Stack>
-    //       {/* <UIProvider> */}
-    //         <Appbar/>
-    //         <Banner />
-    //       {/* </UIProvider> */}
-    //     </Stack>
-    //   </Container>
-    // </ThemeProvider>
-    <BrowserRouter >
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <Container
           disableGutters
